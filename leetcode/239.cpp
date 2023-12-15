@@ -17,7 +17,7 @@ public:
                 window.pop_back();
             }
             window.push_back(nums[w_right]);
-            if (w_right - w_left == k - 1) {
+            if (w_right - w_left == static_cast<std::size_t>(k - 1)) {
                 window_max_list.push_back(window.front());
                 if (window.front() == nums[w_left]) {
                     window.pop_front();
@@ -31,7 +31,7 @@ public:
     std::vector<int> maxSlidingWindow_with_multiset_N_LOGN(const std::vector<int>& nums, int k) {
         std::vector<int> window_max_list;
         std::multiset<int> window{nums.begin(), nums.begin() + std::min(k, static_cast<int>(nums.size()))};
-        if (window.size() == k) {
+        if (window.size() == static_cast<std::size_t>(k)) {
             window_max_list.push_back(*window.rbegin());
         }
         for (std::size_t i = k; i < nums.size(); i++) {
