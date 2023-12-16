@@ -17,7 +17,7 @@ public:
                 max_sub_len = std::max(j - i, max_sub_len);
                 auto old_i = i;
                 i = it->second + 1;
-                for (int k = old_i; k < i; k++) {
+                for (std::size_t k = old_i; k < i; k++) {
                     hash_table.erase(s.at(k));
                 }
             }

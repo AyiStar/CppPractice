@@ -16,7 +16,7 @@ public:
 
 private:
     void backTracking(const int n, std::vector<std::string> &result, std::vector<char> &stk, int status) {
-        if (stk.size() == n) {
+        if (static_cast<int>(stk.size()) == n) {
             if (status == 0) {
                 result.push_back(std::string(stk.begin(), stk.end()));
             }

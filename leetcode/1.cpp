@@ -7,11 +7,11 @@ public:
     std::vector<int> twoSum(std::vector<int>& nums, int target) {
         size_t len = nums.size();
         std::vector<int> result;
-        for (int i = 0; i < len; i++) {
-            for (int j = i + 1; j < len; j++) {
+        for (std::size_t i = 0; i < len; i++) {
+            for (std::size_t j = i + 1; j < len; j++) {
                 if (nums[i] + nums[j] == target) {
-                    result.push_back(i);
-                    result.push_back(j);
+                    result.push_back(static_cast<int>(i));
+                    result.push_back(static_cast<int>(j));
                 }
             }
         }
