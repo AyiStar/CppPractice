@@ -11,6 +11,13 @@ else()
     add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-find_package(Catch2 REQUIRED)
+Include(FetchContent)
+FetchContent_Declare(
+  Catch2
+  GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+  GIT_TAG        v3.4.0 # or a later release
+)
+FetchContent_MakeAvailable(Catch2)
+
 
 add_subdirectory(leetcode/ leetcode/)
